@@ -1,7 +1,13 @@
+import Navbar from "./components/NavBar";
+
 function App() {
   return (
     <>
-      <h1 className="text-7xl">Zubi!!</h1>
+      <Navbar /> {/* Add the Navbar at the top */}
+      <div className="mt-16">
+        <h1 className="text-7xl text-center">zubi</h1>
+        <p className="text-center mt-4">bridge your skills</p>
+      </div>
     </>
   );
 }
