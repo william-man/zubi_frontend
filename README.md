@@ -1,50 +1,34 @@
-# React + TypeScript + Vite
+### Commit Types
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. **feat**: A new feature for the user.
+   - Example: `feat(auth): add login functionality`
 
-Currently, two official plugins are available:
+2. **fix**: A bug fix for the user.
+   - Example: `fix(button): correct hover state color`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+3. **docs**: Documentation only changes.
+   - Example: `docs(README): update setup instructions`
 
-## Expanding the ESLint configuration
+4. **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semicolons, etc.).
+   - Example: `style(app): fix spacing issues`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+5. **refactor**: Code changes that neither fix a bug nor add a feature.
+   - Example: `refactor(user): optimize profile picture loading`
 
-- Configure the top-level `parserOptions` property like this:
+6. **perf**: A code change that improves performance.
+   - Example: `perf(db): improve query performance for large datasets`
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+7. **test**: Adding missing tests or correcting existing tests.
+   - Example: `test(profile): add unit tests for profile component`
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+8. **build**: Changes that affect the build system or external dependencies (e.g., `gulp`, `webpack`, `npm`).
+   - Example: `build(deps): update webpack to v5`
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+9. **ci**: Changes to our CI configuration files and scripts (e.g., GitHub Actions, CircleCI, Travis).
+   - Example: `ci(actions): add Node.js version matrix for testing`
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+10. **chore**: Other changes that don't modify `src` or `test` files, such as tooling, package updates, etc.
+    - Example: `chore(deps): bump eslint version`
+
+11. **revert**: Reverts a previous commit.
+
