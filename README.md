@@ -32,10 +32,16 @@
 
 11. **revert**: Reverts a previous commit.
 
-
+### Colour Palette
+- **Logo**: #FFD166 (yellow)
+- **Hero and cards background colour**: #629677 (green)
+- **Secondary background colour**: #495D63 (dark green)
+- **Font colour (h1, h2, p)**: #FFFFFF (white)
+- **Buttons**: Backgorund colour: #FFFFFF | Text colour: #1B2D2A (gunmetal)
+- **Backup colour**: #6F2DBD (purple)
 ### React Components
 All of our components are inside `src/components` folder.
-1. **Logo**: Our Logo.tsx renders the svg: a distorted circle shape icon, colour #FFC100 (Jack's Favourite), saved in src/assets.
+1. **Logo**: Our Logo.tsx renders the svg: a distorted circle shape icon, colour #FFD166 (Jack's Favourite), saved in src/assets.
 2. **Navbar**:
 - Mobile First, and responsive for larger screen sizes
 - it displayes the logo on the top left followed by the name of our project: zubi (all lowercase)
