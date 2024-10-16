@@ -1,18 +1,19 @@
-import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaTiktok, FaYoutube, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTiktok, FaTwitter, FaYoutube, FaWhatsapp } from 'react-icons/fa';
 import FooterSection from './FooterSection';
 
-const Socials: React.FC = () => {
-  const links = [
-    { name: <FaFacebook className="hover:text-[#FFD166] transition-colors duration-200" />, url: 'https://facebook.com' },
-    { name: <FaTwitter className="hover:text-[#FFD166] transition-colors duration-200" />, url: 'https://twitter.com' },
-    { name: <FaInstagram className="hover:text-[#FFD166] transition-colors duration-200" />, url: 'https://instagram.com' },
-    { name: <FaTiktok className="hover:text-[#FFD166] transition-colors duration-200" />, url: 'https://tiktok.com' },
-    { name: <FaYoutube className="hover:text-[#FFD166] transition-colors duration-200" />, url: 'https://youtube.com' },
-    { name: <FaWhatsapp className="hover:text-[#FFD166] transition-colors duration-200" />, url: 'https://whatsapp.com' },
+const Socials = () => {
+  const socialLinks = [
+    { name: <FaFacebookF className="text-font hover:text-zubiLogo transition-colors duration-300" />, url: "https://www.facebook.com" },
+    { name: <FaTwitter className="text-font hover:text-zubiLogo transition-colors duration-300" />, url: "https://www.x.com" },
+    { name: <FaInstagram className="text-font hover:text-zubiLogo transition-colors duration-300" />, url: "https://www.instagram.com" },
+    { name: <FaTiktok className="text-font hover:text-zubiLogo transition-colors duration-300" />, url: "https://www.tiktok.com" },
+    { name: <FaYoutube className="text-font hover:text-zubiLogo transition-colors duration-300" />, url: "https://www.youtube.com" },
+    { name: <FaWhatsapp className="text-font hover:text-zubiLogo transition-colors duration-300" />, url: "https://www.whatsapp.com" },
   ];
 
-  return <FooterSection title="Socials" links={links} isHorizontal />;
+  return (
+    <FooterSection title="Socials" links={socialLinks} isHorizontal />
+  );
 };
 
 export default Socials;

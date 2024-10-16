@@ -8,13 +8,13 @@ interface FooterSectionProps {
 
 const FooterSection: React.FC<FooterSectionProps> = ({ title, links, isHorizontal }) => {
   return (
-    <div>
-      <h3 className="text-lg font-bold mb-4">{title}</h3>
+    <div className="font-helonik text-font"> {/* Apply the new font and default text color */}
+      <h3 className="text-lg font-bold mb-4 text-zubiLogo">{title}</h3> {/* Set the color to zubiLogo */}
       <ul className={`list-none ${isHorizontal ? "flex flex-wrap justify-center md:justify-start" : ""}`}>
         {links.map((link, index) => (
-          <li key={index} className={`mb-2 ${isHorizontal ? "mx-2" : ""} ${index === 0 && isHorizontal ? "md:ml-0" : ""}`}>
+          <li key={index} className={`mb-2 ${isHorizontal ? "mx-2" : ""} ${index === 0 && isHorizontal ? "md:ml-0" : ""} font-thin`}>
             {typeof link.url === 'string' ? (
-              <a href={link.url} className="hover:underline">
+              <a href={link.url} className="hover:underline text-font"> {/* Keep text color consistent */}
                 {link.name}
               </a>
             ) : (
