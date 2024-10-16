@@ -6,7 +6,7 @@ const TutorProfile = () => {
 
   return (
     <>
-      <div className="h-screen bg-zubiGreen font-helonik flex flex-col items-center">
+      <div className="h-screen bg-zubiGreen font-helonik flex flex-col items-center text-white">
         <div className="w-10/12 mx-auto flex flex-col items-center mt-11">
           <h3 className="text-4xl mb-5">{tutor.full_name}</h3>
           <img
