@@ -96,6 +96,13 @@ All of our components are inside `src/components` folder.
 - it displayes the logo on the top left followed by the name of our project: zubi (all lowercase)
 - When on smaller screens we are using an hamburger menu placed on the right (`FaBars` from React Icons)
 - When on larger screen the menu items are displayed inline using `hidden md:flex`.
-3. **Footer**: to be created
+3. **Footer**:
+- Mobile First, and responsive for larger screen sizes
+- Divided in 3 categories (Useful Information, Legal, Socials)
+- "All rights reserved" section
+- The social icons are from React Icons
+- Maximised readability (thanks to our colour palette)
+- Hoover effect applied to the socials icons, using our predefined tone of purple achieved with Tailwind: `hover:text-[#6F2DBD]`
+- Accessibility improvement thanks to the hoover effect apllied to the links: `hover:underline`
 4. **Button**: to be created
 5. **TutorCard**: to be created
