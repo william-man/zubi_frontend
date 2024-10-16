@@ -3,6 +3,7 @@ import Layout from "../components/Layout/Layout";
 import { DayPicker } from "react-day-picker";
 import { useState } from "react";
 import "react-day-picker/style.css";
+import Button from "../components/Button/Button";
 
 const TutorProfile = () => {
   const location = useLocation();
@@ -19,7 +20,6 @@ const TutorProfile = () => {
             className="w-11/12 mb-8 bg-white rounded-md"
           />
           <p className="font-sans leading-5">{tutor.description}</p>
-
           <h4 className="text-3xl mt-10 mb-4 self-end ">Availability</h4>
           <div className="mb-12">
             <DayPicker
@@ -34,6 +34,11 @@ const TutorProfile = () => {
               }
             />
           </div>
+          <Button
+            onClick={() => console.log(selected)}
+            label="book"
+            buttonType="cardButton"
+          />
         </div>
       </div>
     </Layout>
