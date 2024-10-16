@@ -21,7 +21,7 @@ interface CardProps {
 
 const Card = ({ tutor }: CardProps) => {
   return (
-    <div className="mb-16 p-8 rounded-md font-helonik tutor-card bg-zubiGreen w-3/4 m-auto text-white flex flex-col gap-7">
+    <div className="mb-16 p-8 rounded-md font-helonik tutor-card bg-zubiGreen w-10/12 m-auto text-white flex flex-col items-center gap-7">
       <h3 className="text-2xl">{tutor.full_name}</h3>
       <img src={tutor.img_source} className="h-44 w-64 bg-white rounded-md" />
       <p className="font-sans leading-5">{tutor.description}</p>
