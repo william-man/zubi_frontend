@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Helonik Extended";
+  src: url("./assets/fonts/Helonik Extended Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
