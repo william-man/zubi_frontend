@@ -1,8 +1,9 @@
 import { useLocation } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
-import { DayPicker } from "react-day-picker";
+import Calendar from "../components/Calendar";
 import { useState } from "react";
-import "react-day-picker/style.css";
+import { DayPicker } from "react-day-picker";
+
 import Button from "../components/Button/Button";
 
 const TutorProfile = () => {
@@ -20,20 +21,8 @@ const TutorProfile = () => {
             className="w-11/12 mb-8 bg-white rounded-md"
           />
           <p className="font-sans leading-5">{tutor.description}</p>
-          <h4 className="text-3xl mt-10 mb-4 self-end ">Availability</h4>
-          <div className="mb-12">
-            <DayPicker
-              className="font-sans"
-              mode="single"
-              selected={selected}
-              onSelect={setSelected}
-              footer={
-                selected
-                  ? `Selected: ${selected.toLocaleDateString()}`
-                  : "Pick a day."
-              }
-            />
-          </div>
+          <h4 className="text-3xl mt-10 mb-4 self-start ">Availability</h4>
+          <Calendar selected={selected} setSelected={setSelected} />
           <Button
             onClick={() => console.log(selected)}
             label="book"
