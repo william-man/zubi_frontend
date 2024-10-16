@@ -97,12 +97,12 @@ All of our components are inside `src/components` folder.
 - When on smaller screens we are using an hamburger menu placed on the right (`FaBars` from React Icons)
 - When on larger screen the menu items are displayed inline using `hidden md:flex`.
 3. **Footer**:
-- Mobile First, and responsive for larger screen sizes
-- Divided in 3 categories (Useful Information, Legal, Socials)
-- "All rights reserved" section
-- The social icons are from React Icons
-- Maximised readability (thanks to our colour palette)
-- Hoover effect applied to the socials icons, using our predefined tone of purple achieved with Tailwind: `hover:text-[#6F2DBD]`
-- Accessibility improvement thanks to the hoover effect apllied to the links: `hover:underline`
+- 4 sub components to make each file more concise
+- FooterSection.tsx is the base component used to create the sections of our Footer.tsx
+- The 3 sub components using FooterSection as their base are: UsefulInformation.tsx, Legal.tsx and Socials.tsx
+- We can use FooterSection.tsx to create other footer sub sections in the future
+- Footer.tsx includes an "All rights reserved" div
+- The social icons are using React Icons
+- Accessibility: maximised readability and colour contrast. Hoover effects applied to our links: `hover:underline`, and socials icons:`hover:text-[#FFD166 ]`.
 4. **Button**: to be created
 5. **TutorCard**: to be created
