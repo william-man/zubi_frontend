@@ -81,7 +81,6 @@ To keep the codebase organized and ensure clear understanding, we follow these b
     - Example: `chore(deps): bump eslint version`
 
 11. **revert**: Reverts a previous commit.
-
 ### Colour Palette
 - **Logo**: #FFD166 (yellow)
 - **Hero and cards background colour**: #629677 (green)

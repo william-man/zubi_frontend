@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa'; 
-import Logo from './Logo'; // Importing the Logo component
+import Logo from '../Logo/Logo'; // Importing the Logo component
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
