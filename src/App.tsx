@@ -1,22 +1,17 @@
-import Navbar from "./components/Navbar/Navbar";
-import CardsContainer from "./components/CardsContainer/CardsContainer";
-import HeroSection from "./components/Hero/Hero";
-import Footer from "./components/Footer/Footer";
-import Button from "./components/Button/Button";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import TutorProfile from "./pages/TutorProfile";
 
 function App() {
-  const handleButtonClick = () => {
-    console.log("Button clicked!");
-  };
-
   return (
-    <>
-      <Navbar /> 
-      <HeroSection />
-      <CardsContainer />
-      <Button label="Learn from me" onClick={handleButtonClick} />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/tutorprofile" element={<TutorProfile />} />{" "}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
