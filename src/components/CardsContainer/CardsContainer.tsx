@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Card from "./Card/Card";
 
 const CardsContainer: React.FC = () => {
   const [tutors, setTutors] = useState([]);
@@ -27,7 +28,7 @@ const CardsContainer: React.FC = () => {
   return (
     <div>
       {tutors.map((tutor, index) => (
-        <h1 key={index}>{tutor.full_name}</h1>
+        <Card key={index} tutor={tutor} />
       ))}
     </div>
   );
