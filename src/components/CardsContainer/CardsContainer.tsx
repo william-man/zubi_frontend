@@ -26,7 +26,7 @@ const CardsContainer: React.FC = () => {
   }, []);
 
   return (
-    <div className="mt-12">
+    <div className="mt-12 md:grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
       {tutors.map((tutor, index) => (
         <Card key={index} tutor={tutor} />
       ))}
