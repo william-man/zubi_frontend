@@ -1,3 +1,5 @@
+import Button from "../../Button/Button";
+
 interface Tutor {
   id: number;
   full_name: string;
@@ -23,9 +25,7 @@ const Card = ({ tutor }: CardProps) => {
       <h3 className="text-2xl">{tutor.full_name}</h3>
       <img src={tutor.img_source} className="h-44 w-64 bg-white rounded-md" />
       <p className="font-sans leading-5">{tutor.description}</p>
-      <button className="bg-white text-zubiText py-4 px-9 rounded-full text-xl">
-        learn from me
-      </button>
+      <Button label="learn with me" buttonType="cardButton" />
     </div>
   );
 };

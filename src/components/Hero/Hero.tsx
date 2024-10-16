@@ -1,4 +1,5 @@
 import Logo from "../Logo/Logo";
+import Button from "../Button/Button";
 
 function HeroSection() {
   return (
@@ -7,6 +8,7 @@ function HeroSection() {
         <Logo className="w-32" />
         <h1 className="text-8xl text-center">zubi</h1>
         <p className="text-center mt-4 text-2xl">Bridge your skills</p>
+        <Button label="get started" buttonType="cardButton" />
       </div>
     </div>
   );
