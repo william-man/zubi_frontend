@@ -127,5 +127,12 @@ All of our components are inside `src/components` folder.
 - The social icons are using React Icons
 - Accessibility: maximised readability and colour contrast. Hoover effects applied to our links: `hover:underline`, and socials icons:`hover:text-[#FFD166 ]`.
 
+4. **Button**: 
+- Hoover effect `hover:text-[#FFD166 ]`
+- This is going to be our Button functionality we assign as we start using it in the Hero Page and Cards (to be updated later): `onClick: () => void;`
+5. **TutorCard**: to be created
+
+
 4. **Button**: to be created
 5. **TutorCard**: to be created
+
