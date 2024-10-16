@@ -10,6 +10,7 @@ interface Tutor {
   created_at: string;
   fk_subject_id: null | number;
   fk_tutortype_id: null | number;
+  img_source: string;
 }
 
 interface CardProps {
@@ -18,9 +19,9 @@ interface CardProps {
 
 const Card = ({ tutor }: CardProps) => {
   return (
-    <div className="p-8 rounded-md font-helonik tutor-card mb-6 bg-zubiGreen w-3/4 m-auto text-white flex flex-col gap-7">
+    <div className="mb-16 p-8 rounded-md font-helonik tutor-card bg-zubiGreen w-3/4 m-auto text-white flex flex-col gap-7">
       <h3 className="text-2xl">{tutor.full_name}</h3>
-      <div className="h-44 w-64 bg-white rounded-md"></div>
+      <img src={tutor.img_source} className="h-44 w-64 bg-white rounded-md" />
       <p className="font-sans leading-5">{tutor.description}</p>
       <button className="bg-white text-zubiText py-4 px-9 rounded-full text-xl">
         learn from me
