@@ -17,7 +17,7 @@ interface CardProps {
 
 const Card = ({ tutor }: CardProps) => {
   return (
-    <div className="tutor-card mb-6">
+    <div className="tutor-card mb-6 bg-zubiGreen w-3/4 m-auto">
       <h3>{tutor.full_name}</h3>
       <p>{tutor.email}</p>
       <p>{tutor.phone_number}</p>
