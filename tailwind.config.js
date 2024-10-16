@@ -12,6 +12,9 @@ export default {
         zubiText: "#1B2D2A",
         zubiHighlight: "#6F2DBD",
       },
+      fontFamily: {
+        helonik: ["Helonik Extended", "sans-serif"],
+      },
     },
   },
   plugins: [],
