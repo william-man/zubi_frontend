@@ -13,7 +13,7 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, buttonType }) => {
       className={
         buttonType === "cardButton"
           ? "bg-buttonBg text-zubiText font-helonik py-2 px-4 rounded-full transition duration-300 ease-in-out hover:bg-zubiLogo"
-          : "bg-buttonBg"
+          : "bg-buttonBg text-zubiText font-helonik py-4 px-6 text-xl rounded-full transition duration-300 ease-in-out hover:bg-zubiLogo"
       }
       style={{ margin: "2px" }}
     >

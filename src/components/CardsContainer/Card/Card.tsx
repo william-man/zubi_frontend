@@ -25,7 +25,11 @@ const Card = ({ tutor }: CardProps) => {
       <h3 className="text-2xl">{tutor.full_name}</h3>
       <img src={tutor.img_source} className="h-44 w-64 bg-white rounded-md" />
       <p className="font-sans leading-5">{tutor.description}</p>
-      <Button label="learn with me" buttonType="cardButton" />
+      <Button
+        onClick={() => console.log("card button clicked")}
+        label="learn with me"
+        buttonType="cardButton"
+      />
     </div>
   );
 };
