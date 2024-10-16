@@ -15,7 +15,7 @@ const TutorProfile = () => {
           />
           <p className="font-sans leading-5">{tutor.description}</p>
           <div className="">
-            <h4 className="text-3xl mt-4 mb-4 self-end ">Availability</h4>
+            <h4 className="text-3xl mt-10 mb-4 self-end ">Availability</h4>
             <div className="font-sans">
               <p>Monday:</p>
               <p>Tuesday:</p>
