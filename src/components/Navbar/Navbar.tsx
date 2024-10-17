@@ -46,41 +46,13 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      {/* Mobile Menu */}
+<NavbarMenu
+  menuItems={menuItems}
+  className={`${isOpen ? "block" : "hidden"} md:hidden px-2 pt-2 pb-3 space-y-1 text-zubiText justify-end`} // Added justify-end for right alignment
+/>
 
-      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
-        <div className="px-2 pt-2 pb-3 space-y-1">
-          <a
-            href="#my-account"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200"
-          >
-            My Account
-          </a>
-          <a
-            href="#tutors"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200"
-          >
-            Tutors
-          </a>
-          <a
-            href="#courses"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200"
-          >
-            Courses
-          </a>
-          <a
-            href="#about-us"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200"
-          >
-            About Us
-          </a>
-          <a
-            href="#reviews"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200"
-          >
-            Reviews
-          </a>
-        </div>
-      </div>
     </nav>
   );
 };
