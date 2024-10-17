@@ -111,11 +111,13 @@ All of our components are inside `src/components` folder.
 
 1. **Logo**: Our Logo.tsx renders the svg: a distorted circle shape icon, colour #FFD166 (Jack's Favourite), saved in src/assets.
 2. **Navbar**:
-
+- Refractor to make the code less redundant
 - Mobile First, and responsive for larger screen sizes
 - it displayes the logo on the top left followed by the name of our project: zubi (all lowercase)
 - When on smaller screens we are using an hamburger menu placed on the right (`FaBars` from React Icons)
 - When on larger screen the menu items are displayed inline using `hidden md:flex`.
+- Hoover effect over the links: #FFD166
+- Using our predefined font
 
 3. **Footer**:
 
