@@ -29,12 +29,12 @@ const Scheduler = ({ availability }: Availability) => {
   console.log(myEvents[0]);
 
   return (
-    <div className="flex items-center justify-center font-sans h-[600px]">
+    <div className="flex items-center justify-center font-sans w-full mb-10">
       <Calendar
         localizer={localizer}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500, width: "70%" }}
+        style={{ height: 500, width: "100%" }}
         view={Views.WEEK}
         onView={() => console.log("View changed to:")}
         events={myEvents}
