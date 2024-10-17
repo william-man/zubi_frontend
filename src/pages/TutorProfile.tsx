@@ -19,12 +19,14 @@ const TutorProfile = () => {
           />
           <p className="font-sans leading-5">{tutor.description}</p>
           <h4 className="text-3xl mt-10 mb-4 self-start ">Availability</h4>
-          <Scheduler />
-          <Button
-            onClick={() => console.log("button clicked")}
-            label="book"
-            buttonType="cardButton"
-          />
+          <Scheduler availability={tutor.availability} />
+          <div className="mb-9">
+            <Button
+              onClick={() => console.log("button clicked")}
+              label="book"
+              buttonType="cardButton"
+            />
+          </div>
         </div>
       </div>
     </Layout>
