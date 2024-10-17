@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
-import MyCalendar from "../components/New-Calendar";
+import Scheduler from "../components/Scheduler";
 
 import Button from "../components/Button/Button";
 
@@ -19,7 +19,7 @@ const TutorProfile = () => {
           />
           <p className="font-sans leading-5">{tutor.description}</p>
           <h4 className="text-3xl mt-10 mb-4 self-start ">Availability</h4>
-          <MyCalendar />
+          <Scheduler />
           <Button
             onClick={() => console.log("button clicked")}
             label="book"

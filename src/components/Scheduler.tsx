@@ -17,15 +17,6 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-// what you must have is this
-const events = [
-  {
-    title: "My Event",
-    start: new Date("2015-04-12T13:45:00-05:00"),
-    end: new Date("2015-04-12T14:00:00-05:00"),
-  },
-];
-
 const now = new Date();
 
 const myEvents = [
@@ -43,7 +34,7 @@ const myEvents = [
   },
 ];
 
-const MyCalendar = (props) => (
+const Scheduler = () => (
   <div className="flex items-center justify-center font-sans h-[600px]">
     <Calendar
       localizer={localizer}
@@ -62,4 +53,4 @@ const MyCalendar = (props) => (
   </div>
 );
 
-export default MyCalendar;
+export default Scheduler;
