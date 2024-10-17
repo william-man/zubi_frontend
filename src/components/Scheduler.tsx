@@ -7,7 +7,7 @@ import { enUS } from "date-fns/locale/en-US";
 import convertAvailability from "../utils/convertAvailability";
 
 interface Availability {
-  [day: string]: string[]; // Maps days of the week to an array of time slots
+  [day: string]: string[];
 }
 
 const Scheduler = ({ availability }: Availability) => {
@@ -35,9 +35,9 @@ const Scheduler = ({ availability }: Availability) => {
         startAccessor="start"
         endAccessor="end"
         style={{ height: 500, width: "70%" }}
-        view={Views.WEEK} // Hardcoded view
+        view={Views.WEEK}
         onView={() => console.log("View changed to:")}
-        events={myEvents} // Use transformed events
+        events={myEvents}
         views={{
           week: true,
         }}
