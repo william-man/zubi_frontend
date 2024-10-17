@@ -17,8 +17,17 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
+// what you must have is this
+const events = [
+  {
+    title: "My Event",
+    start: new Date("2015-04-12T13:45:00-05:00"),
+    end: new Date("2015-04-12T14:00:00-05:00"),
+  },
+];
+
 const MyCalendar = (props) => (
-  <div className="flex items-center justify-center font-sans">
+  <div className="flex items-center justify-center font-sans h-[600px]">
     <Calendar
       localizer={localizer}
       //   events={myEventsList}
@@ -30,6 +39,7 @@ const MyCalendar = (props) => (
       views={{
         week: true,
       }}
+      step={30}
     />
   </div>
 );
