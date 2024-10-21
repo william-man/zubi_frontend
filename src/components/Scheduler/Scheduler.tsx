@@ -4,7 +4,7 @@ import { parse } from "date-fns/parse";
 import { startOfWeek } from "date-fns/startOfWeek";
 import { getDay } from "date-fns/getDay";
 import { enUS } from "date-fns/locale/en-US";
-import convertAvailability from "../utils/convertAvailability";
+import convertAvailability from "../../utils/convertAvailability";
 
 interface Availability {
   [day: string]: string[];
