@@ -26,7 +26,7 @@ const BaseForm: React.FC<BaseFormProps> = ({
         />
       ))}
 
-      <div className="mb-4">
+      <div className="flex justify-center">
         <Button
           label={buttonLabel}
           onClick={() => onSubmit}
