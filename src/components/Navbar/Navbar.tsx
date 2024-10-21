@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
   const menuItems = [
     { label: "My Account", href: "/my-account" },
     { label: "Tutors", href: "/tutors" },
-    { label: "Courses", href: "/courses" },
+    { label: "Subjects", href: "/subjects" },
     { label: "About Us", href: "/about" },
   ];
 
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
 <NavbarMenu
   menuItems={menuItems}
-  className={`${isOpen ? "block" : "hidden"} md:hidden px-2 pt-2 pb-3 space-y-1 text-zubiText justify-end`} // Added justify-end for right alignment
+  className={`${isOpen ? "block" : "hidden"} md:hidden px-2 pt-2 pb-3 space-y-1 text-zubiText justify-end`}
 />
 
     </nav>
