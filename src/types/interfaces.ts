@@ -36,3 +36,9 @@ export interface ButtonProps {
   buttonType: string;
   ariaLabel?: string;
 }
+
+export interface NavbarLinkProps {
+  label: string;
+  href: string;
+  className?: string;
+}

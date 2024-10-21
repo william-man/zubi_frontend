@@ -28,13 +28,11 @@ const Navbar: React.FC = () => {
             <span className="ml-2 text-xl font-bold text-zubiText">zubi</span>
           </Link>
 
-          {/* Desktop Menu */}
           <NavbarMenu
             menuItems={menuItems}
             className="hidden md:flex space-x-8 items-center text-zubiText"
           />
 
-          {/* Mobile Menu Button */}
           <div className="flex items-center md:hidden">
             <button
               onClick={toggleMenu}
@@ -48,7 +46,6 @@ const Navbar: React.FC = () => {
         </div>
       </div>
       
-      {/* Mobile Menu */}
 <NavbarMenu
   menuItems={menuItems}
   className={`${isOpen ? "block" : "hidden"} md:hidden px-2 pt-2 pb-3 space-y-1 text-zubiText justify-end`}
