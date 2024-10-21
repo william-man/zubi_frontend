@@ -1,19 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import FormInput from "./FormInput";
-
-interface BaseFormProps {
-  title: string;
-  fields: {
-    label: string;
-    type: string;
-    id: string;
-    placeholder: string;
-    required?: boolean;
-  }[];
-  buttonLabel: string;
-  onSubmit: (e: React.FormEvent) => void;
-}
+import { BaseFormProps } from "../../types/interfaces";
 
 const BaseForm: React.FC<BaseFormProps> = ({
   title,
@@ -39,7 +27,12 @@ const BaseForm: React.FC<BaseFormProps> = ({
       ))}
 
       <div className="mb-4">
-      <Button label={buttonLabel} onClick={() => onSubmit} buttonType="cardButton" />
+        <Button
+          label={buttonLabel}
+          onClick={() => onSubmit}
+          buttonType="cardButton"
+          ariaLabel={`Submit ${buttonLabel} form`}
+        />
       </div>
     </form>
   );

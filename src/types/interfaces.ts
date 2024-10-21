@@ -16,3 +16,23 @@ export interface BaseResponse {
 export interface SubjectResponse extends BaseResponse {
   data: Subject[];
 }
+
+export interface BaseFormProps {
+  title: string;
+  fields: {
+    label: string;
+    type: string;
+    id: string;
+    placeholder: string;
+    required?: boolean;
+  }[];
+  buttonLabel: string;
+  onSubmit: (e: React.FormEvent) => void;
+}
+
+export interface ButtonProps {
+  label: string;
+  onClick: () => void;
+  buttonType: string;
+  ariaLabel?: string;
+}
