@@ -1,12 +1,5 @@
 import React from "react";
-
-interface FormInputProps {
-  label: string;
-  type: string;
-  id: string;
-  placeholder: string;
-  required?: boolean;
-}
+import { FormInputProps } from "../../types/interfaces";
 
 const FormInput: React.FC<FormInputProps> = ({
   label,

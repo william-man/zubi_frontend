@@ -42,3 +42,11 @@ export interface NavbarLinkProps {
   href: string;
   className?: string;
 }
+
+export interface FormInputProps {
+  label: string;
+  type: string;
+  id: string;
+  placeholder: string;
+  required?: boolean;
+}
