@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
 import NavbarMenu from "./NavbarMenu";
 
@@ -21,10 +22,10 @@ const Navbar: React.FC = () => {
     <nav className="bg-buttonBg shadow-md fixed w-full top-0 z-10 font-helonik">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center">
             <Logo className="w-8 h-8" />
             <span className="ml-2 text-xl font-bold text-zubiText">zubi</span>
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <NavbarMenu

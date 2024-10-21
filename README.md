@@ -119,6 +119,7 @@ All of our components are inside `src/components` folder.
 - When on larger screen the menu items are displayed inline using `hidden md:flex`.
 - Hoover effect over the links: #FFD166
 - Using our predefined font
+- Clicking on the Logo takes the user to the homepage
 
 3. **Footer**:
 - 4 sub components to make each file more concise
