@@ -110,6 +110,7 @@ To keep the codebase organized and ensure clear understanding, we follow these b
 All of our components are inside `src/components` folder.
 
 1. **Logo**: Our Logo.tsx renders the svg: a distorted circle shape icon, colour #FFD166 (Jack's Favourite), saved in src/assets.
+
 2. **Navbar**:
 - Refractor to make the code less redundant
 - Mobile First, and responsive for larger screen sizes
@@ -121,7 +122,6 @@ All of our components are inside `src/components` folder.
 - Clicking on the Logo takes the user to the homepage
 
 3. **Footer**:
-
 - 4 sub components to make each file more concise
 - FooterSection.tsx is the base component used to create the sections of our Footer.tsx
 - The 3 sub components using FooterSection as their base are: UsefulInformation.tsx, Legal.tsx and Socials.tsx
@@ -133,9 +133,23 @@ All of our components are inside `src/components` folder.
 4. **Button**: 
 - Hoover effect `hover:text-[#FFD166 ]`
 - This is going to be our Button functionality we assign as we start using it in the Hero Page and Cards (to be updated later): `onClick: () => void;`
+
 5. **TutorCard**: to be created
 
+6. **Layout**: used in each page for consistency. Navbar at the top, body, Footer at the bottom.
 
-4. **Button**: to be created
-5. **TutorCard**: to be created
+### React Pages
+
+(All Pages are using the Layout Component, mobile first, responsive, using our `tailwind.config.js` rules.)
+
+1. **Home**: 
+- Includes the Logo SVG
+- Includes the `zubi` project name (all lower case)
+- `get started` button
+2. **About**:
+3. **Subjects**:
+- Recalls our Interface library `src/types/interfaces.ts`
+- Fethces subjects from our DB `Subjects` table
+- Displays Subjects in a column on mobile, 2 columns on tablet, 3 columns on desktop
+4. **TutorProfile**:
 

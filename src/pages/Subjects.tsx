@@ -1,16 +1,11 @@
-import { useState, useEffect, ReactNode } from "react";
+import { Subject } from "../types/interfaces";
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout/Layout";
-interface Subject {
-  [x: string]: ReactNode;
-  id: number;
-  name: string;
-  description: string;
-}
 
 const Subjects: React.FC = () => {
   const [subjects, setSubjects] = useState<Subject[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string>("");
 
   const fetchSubjects = async () => {
     try {
