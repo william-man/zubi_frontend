@@ -4,8 +4,8 @@ import Layout from "../components/Layout/Layout";
 
 const Subjects: React.FC = () => {
   const [subjects, setSubjects] = useState<Subject[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string>("");
 
   const fetchSubjects = async () => {
     try {
