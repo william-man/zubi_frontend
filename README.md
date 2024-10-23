@@ -138,6 +138,14 @@ All of our components are inside `src/components` folder.
 
 6. **Layout**: used in each page for consistency. Navbar at the top, body, Footer at the bottom.
 
+7. **Authentication**:
+- Made of 5 sub-components.
+- BaseForm is the template for LoginForm and SignUpForm
+- FormInput is a reusable input field component used in both forms
+- FormContainer is a wrapper component used for styling
+- LoginForm contains the login logic
+- SignUpForm contains the sing-up logic
+
 ### React Pages
 
 (All Pages are using the Layout Component, mobile first, responsive, using our `tailwind.config.js` rules.)
@@ -146,10 +154,14 @@ All of our components are inside `src/components` folder.
 - Includes the Logo SVG
 - Includes the `zubi` project name (all lower case)
 - `get started` button
-2. **About**:
+2. **About**: 
+- our goals
 3. **Subjects**:
 - Recalls our Interface library `src/types/interfaces.ts`
 - Fethces subjects from our DB `Subjects` table
 - Displays Subjects in a column on mobile, 2 columns on tablet, 3 columns on desktop
 4. **TutorProfile**:
-
+5. **Login**:
+- Dynamic Form Toggle - users can switch between login and sign-up forms easily without reloading the page
+- Validation and Sanitisation is processed in the backend
+- Once user is logged in succesfully, redirects to homepage and the `My Account` navbar link becomes `Student Dashboard` or `Tutor Dashboard` depending on what role the user got. Furthermore the `login` link changes to `logout`.
