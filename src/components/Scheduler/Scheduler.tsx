@@ -5,10 +5,8 @@ import { startOfWeek } from "date-fns/startOfWeek";
 import { getDay } from "date-fns/getDay";
 import { enUS } from "date-fns/locale/en-US";
 import { useEffect, useState } from "react";
-
-interface SchedulerProps {
-  id: string;
-}
+import Modal from "./Modal/Modal";
+import { CardProps } from "../CardsContainer/Card/Card.tsx";
 
 interface Slot {
   id: number;
@@ -19,7 +17,10 @@ interface Slot {
   fk_student_id: number;
   fk_tutor_id: number;
 }
-const Scheduler = ({ id }: SchedulerProps) => {
+
+const Scheduler = ({ tutor }: CardProps) => {
+  const id = tutor.id;
+  const [open, setOpen] = useState(false);
   const [tutorSlots, setTutorSlots] = useState();
 
   const locales = {
@@ -74,6 +75,7 @@ const Scheduler = ({ id }: SchedulerProps) => {
   };
 
   const handleBooking = async (event: Slot) => {
+    setOpen(!open);
     const formattedStart = formatDateToLocal(event.start);
     const formattedEnd = formatDateToLocal(event.end);
 
@@ -116,23 +118,26 @@ const Scheduler = ({ id }: SchedulerProps) => {
   });
 
   return (
-    <div className="flex items-center justify-center font-sans w-full mb-10">
-      <Calendar
-        localizer={localizer}
-        startAccessor="start"
-        endAccessor="end"
-        style={{ height: 500, width: "100%" }}
-        view={Views.WEEK}
-        onView={() => console.log("View changed to:")}
-        events={tutorSlots}
-        views={{
-          week: true,
-        }}
-        step={30}
-        onSelectEvent={handleBooking}
-        eventPropGetter={eventPropGetter}
-      />
-    </div>
+    <>
+      <div className="flex items-center justify-center font-sans w-full mb-10">
+        <Calendar
+          localizer={localizer}
+          startAccessor="start"
+          endAccessor="end"
+          style={{ height: 500, width: "100%" }}
+          view={Views.WEEK}
+          onView={() => console.log("View changed to:")}
+          events={tutorSlots}
+          views={{
+            week: true,
+          }}
+          step={30}
+          onSelectEvent={handleBooking}
+          eventPropGetter={eventPropGetter}
+        />
+      </div>
+      <Modal open={open} setOpen={setOpen} tutorName={tutor.full_name} />
+    </>
   );
 };
 
