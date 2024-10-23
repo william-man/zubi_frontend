@@ -9,10 +9,10 @@ const LoginForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     setError(null);  // Reset error message
     setSuccess(null); // Reset success message
-
+  
     try {
       const response = await fetch("/api/login", {
         method: "POST",
@@ -21,12 +21,14 @@ const LoginForm: React.FC = () => {
         },
         body: JSON.stringify({ email, password }),
       });
-
+  
       const data = await response.json();
-
+  
       if (response.ok) {
         setSuccess("Login successful");
         console.log("Login successful:", data);
+        window.location.href = '/';
+      } else {
         setError(data.message || "Login failed");
       }
     } catch {
