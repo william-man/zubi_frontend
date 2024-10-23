@@ -10,8 +10,8 @@ const BaseForm: React.FC<BaseFormProps> = ({
   onSubmit,
 }) => {
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    onSubmit(e); // Call the provided onSubmit handler
+    e.preventDefault();
+    onSubmit(e);
   };
 
   return (
@@ -28,13 +28,15 @@ const BaseForm: React.FC<BaseFormProps> = ({
           id={field.id}
           placeholder={field.placeholder}
           required={field.required}
+          value={field.value} 
+          onChange={field.onChange} 
         />
       ))}
 
       <div className="flex justify-center">
         <Button
           label={buttonLabel}
-          onClick={() => {}} 
+          onClick={() => {}}
           buttonType="cardButton"
           ariaLabel={`Submit ${buttonLabel} form`}
         />

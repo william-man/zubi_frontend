@@ -7,7 +7,6 @@ export interface Subject {
   [x: string]: ReactNode;
 }
 
-// add more shared interfaces here as needed
 export interface BaseResponse {
   success: boolean;
   message?: string;
@@ -17,15 +16,19 @@ export interface SubjectResponse extends BaseResponse {
   data: Subject[];
 }
 
+export interface BaseFormField {
+  label: string;
+  type: string;
+  id: string;
+  placeholder: string;
+  required?: boolean;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
 export interface BaseFormProps {
   title: string;
-  fields: {
-    label: string;
-    type: string;
-    id: string;
-    placeholder: string;
-    required?: boolean;
-  }[];
+  fields: BaseFormField[];
   buttonLabel: string;
   onSubmit: (e: React.FormEvent) => void;
 }
@@ -49,4 +52,6 @@ export interface FormInputProps {
   id: string;
   placeholder: string;
   required?: boolean;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
