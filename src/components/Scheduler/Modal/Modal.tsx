@@ -39,7 +39,7 @@ export default function Modal({ open, setOpen, tutorName }: ModalProps) {
                 <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                   <DialogTitle
                     as="h3"
-                    className="text-base font-semibold leading-6 text-gray-900"
+                    className="text-base font-helonik leading-6 text-gray-900"
                   >
                     Book Session
                   </DialogTitle>
@@ -55,7 +55,7 @@ export default function Modal({ open, setOpen, tutorName }: ModalProps) {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="inline-flex w-full justify-center rounded-md bg-zubiGreen 0 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-zubiDarkGreen sm:ml-3 sm:w-auto"
+                className="inline-flex w-full justify-center rounded-md bg-zubiGreen 0 px-3 py-2 text-sm font-helonik text-white shadow-sm hover:bg-zubiDarkGreen sm:ml-3 sm:w-auto"
               >
                 Book
               </button>
@@ -63,7 +63,7 @@ export default function Modal({ open, setOpen, tutorName }: ModalProps) {
                 type="button"
                 data-autofocus
                 onClick={() => setOpen(false)}
-                className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-helonik text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
               >
                 Cancel
               </button>
