@@ -164,4 +164,4 @@ All of our components are inside `src/components` folder.
 5. **Login**:
 - Dynamic Form Toggle - users can switch between login and sign-up forms easily without reloading the page
 - Validation and Sanitisation is processed in the backend
-- Once user is logged in succesfully, redirects to homepage `window.location.href = '/';`
+- Once user is logged in succesfully, redirects to homepage and the `My Account` navbar link becomes `Student Dashboard` or `Tutor Dashboard` depending on what role the user got. Furthermore the `login` link changes to `logout`.
