@@ -4,16 +4,35 @@ import { parse } from "date-fns/parse";
 import { startOfWeek } from "date-fns/startOfWeek";
 import { getDay } from "date-fns/getDay";
 import { enUS } from "date-fns/locale/en-US";
-import convertAvailability from "../utils/convertAvailability";
+import { useEffect, useState } from "react";
 
-interface Availability {
-  [day: string]: string[];
+interface SchedulerProps {
+  id: string;
 }
+const Scheduler = ({ id }: SchedulerProps) => {
+  const [tutorSlots, setTutorSlots] = useState();
 
-const Scheduler = ({ availability }: Availability) => {
   const locales = {
     "en-US": enUS,
   };
+
+  const getTutorSlots = async () => {
+    const slotsJson = await fetch(`api/booking/tutorslots?id=${id}`);
+    const slots = await slotsJson.json();
+
+    const slotsArrays = slots.map((slot) => {
+      return {
+        start: new Date(slot.start.replace(" ", "T")),
+        end: new Date(slot.end.replace(" ", "T")),
+      };
+    });
+
+    setTutorSlots(slotsArrays);
+  };
+
+  useEffect(() => {
+    getTutorSlots();
+  });
 
   const localizer = dateFnsLocalizer({
     format,
@@ -22,11 +41,6 @@ const Scheduler = ({ availability }: Availability) => {
     getDay,
     locales,
   });
-
-  console.log(availability);
-
-  const myEvents = convertAvailability(availability);
-  console.log(myEvents[0]);
 
   return (
     <div className="flex items-center justify-center font-sans w-full mb-10">
@@ -37,7 +51,7 @@ const Scheduler = ({ availability }: Availability) => {
         style={{ height: 500, width: "100%" }}
         view={Views.WEEK}
         onView={() => console.log("View changed to:")}
-        events={myEvents}
+        events={tutorSlots}
         views={{
           week: true,
         }}
