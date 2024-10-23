@@ -21,6 +21,7 @@ interface Slot {
 const Scheduler = ({ tutor }: CardProps) => {
   const id = tutor.id;
   const [open, setOpen] = useState(false);
+  const [wantsToBook, setWantsToBook] = useState(false);
   const [tutorSlots, setTutorSlots] = useState();
 
   const locales = {
@@ -75,33 +76,35 @@ const Scheduler = ({ tutor }: CardProps) => {
   };
 
   const handleBooking = async (event: Slot) => {
-    setOpen(!open);
-    const formattedStart = formatDateToLocal(event.start);
-    const formattedEnd = formatDateToLocal(event.end);
+    setOpen(true); // Open the modal when an event is clicked
+    if (wantsToBook) {
+      const formattedStart = formatDateToLocal(event.start);
+      const formattedEnd = formatDateToLocal(event.end);
 
-    const bookingData = {
-      start: formattedStart,
-      end: formattedEnd,
-      tutorID: id,
-    };
+      const bookingData = {
+        start: formattedStart,
+        end: formattedEnd,
+        tutorID: id,
+      };
 
-    try {
-      const response = await fetch(`api/booking/session`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(bookingData),
-      });
+      try {
+        const response = await fetch(`api/booking/session`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(bookingData),
+        });
 
-      if (response.ok) {
-        const result = await response.json();
-        console.log("Booking successful:", result);
-      } else {
-        console.error("Booking failed:", response.statusText);
+        if (response.ok) {
+          const result = await response.json();
+          console.log("Booking successful:", result);
+        } else {
+          console.error("Booking failed:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Error during booking:", error);
       }
-    } catch (error) {
-      console.error("Error during booking:", error);
     }
   };
 
@@ -136,7 +139,12 @@ const Scheduler = ({ tutor }: CardProps) => {
           eventPropGetter={eventPropGetter}
         />
       </div>
-      <Modal open={open} setOpen={setOpen} tutorName={tutor.full_name} />
+      <Modal
+        open={open}
+        setOpen={setOpen}
+        tutorName={tutor.full_name}
+        setWantsToBook={setWantsToBook}
+      />
     </>
   );
 };
