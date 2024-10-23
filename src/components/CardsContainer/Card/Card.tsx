@@ -1,7 +1,7 @@
 import Button from "../../Button/Button";
 import { useNavigate } from "react-router-dom";
 
-interface Tutor {
+interface TutorInterface {
   id: number;
   full_name: string;
   address: string;
@@ -16,8 +16,8 @@ interface Tutor {
   img_source: string;
 }
 
-interface CardProps {
-  tutor: Tutor;
+export interface CardProps {
+  tutor: TutorInterface;
 }
 
 const Card = ({ tutor }: CardProps) => {
