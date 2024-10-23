@@ -14,12 +14,12 @@ const LoginForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    setError(null);  // Reset error message
+    setError(null); // Reset error message
     setSuccess(null); // Reset success message
 
     try {
       // Fetch request to the backend through Vite proxy
-      const response = await fetch("/api/login", {
+      const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const LoginForm: React.FC = () => {
       if (response.ok) {
         setSuccess("Login successful");
         console.log("Login successful:", data);
-        
+
         // Set the user context with the logged-in user
         setUser({ name: data.name, email: data.email, role: data.role });
 
@@ -54,7 +54,8 @@ const LoginForm: React.FC = () => {
       placeholder: "Enter your email",
       required: true,
       value: email,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value),
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
+        setEmail(e.target.value),
     },
     {
       label: "Password",
@@ -63,7 +64,8 @@ const LoginForm: React.FC = () => {
       placeholder: "Enter your password",
       required: true,
       value: password,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value),
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
+        setPassword(e.target.value),
     },
   ];
 
