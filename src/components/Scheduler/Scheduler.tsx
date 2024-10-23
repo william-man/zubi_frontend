@@ -42,14 +42,14 @@ const Scheduler = ({ id }: SchedulerProps) => {
   };
 
   const eventPropGetter = (event: Slot) => {
-    let backgroundColor = "";
+    let opacity = "";
     if (event.booking_status === "booked") {
-      backgroundColor = "#1B2D2A";
+      opacity = "0.4";
     }
 
     return {
       style: {
-        backgroundColor,
+        opacity,
         color: "white",
       },
     };
