@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
-import Scheduler from "../components/Scheduler";
+import Scheduler from "../components/Scheduler/Scheduler";
 
 import Button from "../components/Button/Button";
 
