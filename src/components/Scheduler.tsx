@@ -9,6 +9,16 @@ import { useEffect, useState } from "react";
 interface SchedulerProps {
   id: string;
 }
+
+interface Slot {
+  id: number;
+  created_at: string;
+  start: string;
+  end: string;
+  booking_status: string;
+  fk_student_id: number;
+  fk_tutor_id: number;
+}
 const Scheduler = ({ id }: SchedulerProps) => {
   const [tutorSlots, setTutorSlots] = useState();
 
@@ -20,7 +30,7 @@ const Scheduler = ({ id }: SchedulerProps) => {
     const slotsJson = await fetch(`api/booking/tutorslots?id=${id}`);
     const slots = await slotsJson.json();
 
-    const slotsArrays = slots.map((slot) => {
+    const slotsArrays = slots.map((slot: Slot) => {
       return {
         start: new Date(slot.start.replace(" ", "T")),
         end: new Date(slot.end.replace(" ", "T")),
