@@ -1,15 +1,11 @@
 import React from "react";
+import { ButtonProps } from "../../types/interfaces";
 
-interface ButtonProps {
-  label: string;
-  onClick: () => void;
-  buttonType: string;
-}
-
-const Button: React.FC<ButtonProps> = ({ label, onClick, buttonType }) => {
+const Button: React.FC<ButtonProps> = ({ label, onClick, buttonType, ariaLabel }) => {
   return (
     <button
       onClick={onClick}
+      aria-label={ariaLabel}
       className={
         buttonType === "cardButton"
           ? "bg-buttonBg text-zubiText font-helonik py-3 px-11  text-lg rounded-full transition duration-300 ease-in-out hover:bg-zubiLogo"
