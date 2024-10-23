@@ -34,10 +34,73 @@ const Scheduler = ({ id }: SchedulerProps) => {
       return {
         start: new Date(slot.start.replace(" ", "T")),
         end: new Date(slot.end.replace(" ", "T")),
+        booking_status: slot.booking_status,
       };
     });
 
     setTutorSlots(slotsArrays);
+  };
+
+  const eventPropGetter = (event: Slot) => {
+    let backgroundColor = "";
+    if (event.booking_status === "booked") {
+      backgroundColor = "#1B2D2A";
+    }
+
+    return {
+      style: {
+        backgroundColor,
+        color: "white",
+      },
+    };
+  };
+
+  const formatDateToLocal = (isoDate: string) => {
+    const dateObj = new Date(isoDate);
+
+    const formattedDate = dateObj
+      .toLocaleString("sv-SE", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+      })
+      .replace(" ", "T");
+
+    return formattedDate.replace("T", " ").slice(0, 19);
+  };
+
+  const handleBooking = async (event: Slot) => {
+    const formattedStart = formatDateToLocal(event.start);
+    const formattedEnd = formatDateToLocal(event.end);
+
+    const bookingData = {
+      start: formattedStart,
+      end: formattedEnd,
+      tutorID: id,
+    };
+
+    try {
+      const response = await fetch(`api/booking/session`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookingData),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Booking successful:", result);
+      } else {
+        console.error("Booking failed:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error during booking:", error);
+    }
   };
 
   useEffect(() => {
@@ -66,6 +129,8 @@ const Scheduler = ({ id }: SchedulerProps) => {
           week: true,
         }}
         step={30}
+        onSelectEvent={handleBooking}
+        eventPropGetter={eventPropGetter}
       />
     </div>
   );
