@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import BaseForm from "../Authentication/BaseForm";
+import { useUser } from "../../context/useUser"; // Import your useUser hook
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
+  const { setUser } = useUser(); // Get setUser from UserContext
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     setError(null);  // Reset error message
     setSuccess(null); // Reset success message
-  
+
     try {
+      // Fetch request to the backend through Vite proxy
       const response = await fetch("/api/login", {
         method: "POST",
         headers: {
@@ -21,13 +26,18 @@ const LoginForm: React.FC = () => {
         },
         body: JSON.stringify({ email, password }),
       });
-  
+
       const data = await response.json();
-  
+
       if (response.ok) {
         setSuccess("Login successful");
         console.log("Login successful:", data);
-        window.location.href = '/';
+        
+        // Set the user context with the logged-in user
+        setUser({ name: data.name, email: data.email, role: data.role });
+
+        // Redirect to the homepage
+        navigate("/");
       } else {
         setError(data.message || "Login failed");
       }

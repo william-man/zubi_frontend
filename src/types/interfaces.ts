@@ -55,3 +55,14 @@ export interface FormInputProps {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+export interface User {
+  name?: string; // Optional in case no name is provided
+  email: string;
+  role: 'student' | 'tutor'; // Add role property
+}
+
+export interface UserContextType {
+  user: User | null;
+  setUser: (user: User | null) => void;
+}
