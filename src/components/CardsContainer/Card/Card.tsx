@@ -29,7 +29,7 @@ const Card = ({ tutor }: CardProps) => {
 
   return (
     <div className="mb-16 p-6 rounded-lg font-helonik tutor-card bg-zubiGreen w-full sm:w-10/12 m-auto text-white flex flex-col items-center gap-6 transition-all shadow-lg">
-      <h3 className="text-xl md:text-2xl text-center">{tutor.full_name}</h3>
+      <h3 className="text-xl font-bold text-center w-full h-12 overflow-hidden text-ellipsis whitespace-nowrap">{tutor.full_name}</h3>
       <div className="w-full h-48 md:h-56 lg:h-64 overflow-hidden rounded-md">
         <img 
           src={tutor.img_source} 
