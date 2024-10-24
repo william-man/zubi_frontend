@@ -66,14 +66,3 @@ export interface UserContextType {
   user: User | null;
   setUser: (user: User | null) => void;
 }
-
-export interface Tutor {
-  id: number;
-  name: string;
-  description: string;
-  [x: string]: ReactNode;
-}
-
-export interface TutorResponse extends BaseResponse {
-  data: Tutor[];
-}
