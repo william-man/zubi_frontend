@@ -5,6 +5,7 @@ import TutorProfile from "./pages/TutorProfile";
 import Subjects from "./pages/Subjects";
 import Authentication from "./pages/Authentication";
 import { UserProvider } from "./context/UserContext";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/tutorprofile" element={<TutorProfile />} />
           <Route path="/subjects" element={<Subjects />} />
           <Route path="/auth" element={<Authentication />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         </Routes>
       </BrowserRouter>
     </UserProvider>
