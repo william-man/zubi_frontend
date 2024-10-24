@@ -172,3 +172,5 @@ All of our components are inside `src/components` folder.
 - Once user is logged in succesfully, redirects to homepage and the `My Account` navbar link becomes `Student Dashboard` or `Tutor Dashboard` depending on what role the user got. Furthermore the `login` link changes to `logout`.
 6. **Tutors**:
 - This page uses the CardContainer component, ddisplaying all of our available tutors
+8. **ContactUs**: 
+- Our address and contacts
