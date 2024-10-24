@@ -1,7 +1,7 @@
 import Layout from "../components/Layout/Layout";
 import CardsContainer from "../components/CardsContainer/CardsContainer";
 
-const Home = () => {
+const Tutors = () => {
   return (
     <>
       <Layout>
@@ -16,4 +16,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Tutors;
