@@ -23,4 +23,6 @@ $today-highlight-bg: #495d63 !default;
 // Import default styles after variables are set
 @import "react-big-calendar/lib/sass/styles";
 
-// Optionally, add any custom CSS rules here
+.rbc-time-slot {
+  min-height: 30px;
+}
