@@ -84,7 +84,6 @@ const Scheduler = ({ tutor }: CardProps) => {
 
   const handleClick = (event: Event) => {
     setSelectedEvent(event);
-    console.log(event);
     setOpen(true);
   };
 
