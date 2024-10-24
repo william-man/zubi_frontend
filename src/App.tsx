@@ -5,8 +5,19 @@ import TutorProfile from "./pages/TutorProfile";
 import Subjects from "./pages/Subjects";
 import Authentication from "./pages/Authentication";
 import { UserProvider } from "./context/UserContext";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Tutors from "./pages/Tutors";
+
 import FAQ from "./pages/FAQ";
+
+import Careers from "./pages/Careers";
+
+import TermsConditions from "./pages/TermsConditions";
+
+import ContactUs from "./pages/ContactUs";
+
+
+
 
 function App() {
   return (
@@ -19,7 +30,23 @@ function App() {
           <Route path="/tutors" element={<Tutors />} />
           <Route path="/subjects" element={<Subjects />} />
           <Route path="/auth" element={<Authentication />} />
+
           <Route path="/faq" element={<FAQ />} />
+
+
+          <Route path="/careers" element={<Careers />} />
+
+
+          <Route path="/termsconditions" element={<TermsConditions />} />
+
+
+          <Route path="/contactus" element={<ContactUs />} />
+
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+
+
+
+
         </Routes>
       </BrowserRouter>
     </UserProvider>
