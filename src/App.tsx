@@ -7,6 +7,7 @@ import Authentication from "./pages/Authentication";
 import { UserProvider } from "./context/UserContext";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Tutors from "./pages/Tutors";
+import Careers from "./pages/Careers";
 
 import TermsConditions from "./pages/TermsConditions";
 
@@ -26,12 +27,16 @@ function App() {
           <Route path="/subjects" element={<Subjects />} />
           <Route path="/auth" element={<Authentication />} />
 
+          <Route path="/careers" element={<Careers />} />
+
+
           <Route path="/termsconditions" element={<TermsConditions />} />
 
 
           <Route path="/contactus" element={<ContactUs />} />
 
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+
 
 
         </Routes>
