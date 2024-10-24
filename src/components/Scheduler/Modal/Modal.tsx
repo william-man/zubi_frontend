@@ -30,8 +30,11 @@ export default function Modal({
   handleBooking,
 }: ModalProps) {
   const bookHandler = () => {
-    console.log(selectedEvent);
-    handleBooking(selectedEvent);
+    if (selectedEvent) {
+      handleBooking(selectedEvent);
+    } else {
+      console.error("No event selected for booking.");
+    }
     setOpen(false);
   };
   return (
