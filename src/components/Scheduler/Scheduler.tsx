@@ -52,14 +52,18 @@ const Scheduler = ({ tutor }: CardProps) => {
 
   const eventPropGetter = (event: Slot) => {
     let opacity = "";
+    let cursor = "pointer";
+
     if (event.booking_status === "booked") {
       opacity = "0.4";
+      cursor = "default";
     }
 
     return {
       style: {
         opacity,
         color: "white",
+        cursor,
       },
     };
   };
@@ -83,6 +87,9 @@ const Scheduler = ({ tutor }: CardProps) => {
   };
 
   const handleClick = (event: Event) => {
+    if (event.booking_status === "booked") {
+      return;
+    }
     setSelectedEvent(event);
     setOpen(true);
   };
