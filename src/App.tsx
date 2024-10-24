@@ -6,6 +6,7 @@ import Subjects from "./pages/Subjects";
 import Authentication from "./pages/Authentication";
 import { UserProvider } from "./context/UserContext";
 import Tutors from "./pages/Tutors";
+import TermsConditions from "./pages/TermsConditions";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/tutors" element={<Tutors />} />
           <Route path="/subjects" element={<Subjects />} />
           <Route path="/auth" element={<Authentication />} />
+          <Route path="/termsconditions" element={<TermsConditions />} />
         </Routes>
       </BrowserRouter>
     </UserProvider>
