@@ -18,11 +18,18 @@ interface Slot {
   fk_tutor_id: number;
 }
 
+interface Event {
+  booking_status: string;
+  end: string;
+  start: string;
+}
+
 const Scheduler = ({ tutor }: CardProps) => {
   const id = tutor.id;
   const [open, setOpen] = useState(false);
-  const [wantsToBook, setWantsToBook] = useState(false);
+
   const [tutorSlots, setTutorSlots] = useState();
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
   const locales = {
     "en-US": enUS,
@@ -45,14 +52,18 @@ const Scheduler = ({ tutor }: CardProps) => {
 
   const eventPropGetter = (event: Slot) => {
     let opacity = "";
+    let cursor = "pointer";
+
     if (event.booking_status === "booked") {
       opacity = "0.4";
+      cursor = "default";
     }
 
     return {
       style: {
         opacity,
         color: "white",
+        cursor,
       },
     };
   };
@@ -75,36 +86,41 @@ const Scheduler = ({ tutor }: CardProps) => {
     return formattedDate.replace("T", " ").slice(0, 19);
   };
 
-  const handleBooking = async (event: Slot) => {
-    setOpen(true); // Open the modal when an event is clicked
-    if (wantsToBook) {
-      const formattedStart = formatDateToLocal(event.start);
-      const formattedEnd = formatDateToLocal(event.end);
+  const handleClick = (event: Event) => {
+    if (event.booking_status === "booked") {
+      return;
+    }
+    setSelectedEvent(event);
+    setOpen(true);
+  };
 
-      const bookingData = {
-        start: formattedStart,
-        end: formattedEnd,
-        tutorID: id,
-      };
+  const handleBooking = async (event: Event) => {
+    const formattedStart = formatDateToLocal(event.start);
+    const formattedEnd = formatDateToLocal(event.end);
 
-      try {
-        const response = await fetch(`api/booking/session`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(bookingData),
-        });
+    const bookingData = {
+      start: formattedStart,
+      end: formattedEnd,
+      tutorID: id,
+    };
 
-        if (response.ok) {
-          const result = await response.json();
-          console.log("Booking successful:", result);
-        } else {
-          console.error("Booking failed:", response.statusText);
-        }
-      } catch (error) {
-        console.error("Error during booking:", error);
+    try {
+      const response = await fetch(`api/booking/session`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookingData),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Booking successful:", result);
+      } else {
+        console.error("Booking failed:", response.statusText);
       }
+    } catch (error) {
+      console.error("Error during booking:", error);
     }
   };
 
@@ -135,7 +151,7 @@ const Scheduler = ({ tutor }: CardProps) => {
             week: true,
           }}
           step={30}
-          onSelectEvent={handleBooking}
+          onSelectEvent={handleClick}
           eventPropGetter={eventPropGetter}
         />
       </div>
@@ -143,7 +159,8 @@ const Scheduler = ({ tutor }: CardProps) => {
         open={open}
         setOpen={setOpen}
         tutorName={tutor.full_name}
-        setWantsToBook={setWantsToBook}
+        selectedEvent={selectedEvent}
+        handleBooking={handleBooking}
       />
     </>
   );

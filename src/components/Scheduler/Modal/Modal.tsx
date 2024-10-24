@@ -12,17 +12,29 @@ interface ModalProps {
   open: boolean;
   setOpen: (open: boolean) => void;
   tutorName: string;
-  setWantsToBook: (wantsToBook: boolean) => void;
+  selectedEvent: Event | null;
+  handleBooking: (event: Event) => Promise<void>;
+}
+
+interface Event {
+  booking_status: string;
+  end: string;
+  start: string;
 }
 
 export default function Modal({
   open,
   setOpen,
   tutorName,
-  setWantsToBook,
+  selectedEvent,
+  handleBooking,
 }: ModalProps) {
   const bookHandler = () => {
-    setWantsToBook(true);
+    if (selectedEvent) {
+      handleBooking(selectedEvent);
+    } else {
+      console.error("No event selected for booking.");
+    }
     setOpen(false);
   };
   return (
