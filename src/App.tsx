@@ -18,6 +18,7 @@ import ContactUs from "./pages/ContactUs";
 
 
 
+import Partners from "./pages/Partners";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
 
 
 
+          <Route path="/partners" element={<Partners />} />
         </Routes>
       </BrowserRouter>
     </UserProvider>
