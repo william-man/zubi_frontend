@@ -21,8 +21,9 @@ interface Slot {
 const Scheduler = ({ tutor }: CardProps) => {
   const id = tutor.id;
   const [open, setOpen] = useState(false);
-  const [wantsToBook, setWantsToBook] = useState(false);
+
   const [tutorSlots, setTutorSlots] = useState();
+  const [selectedEvent, setSelectedEvent] = useState();
 
   const locales = {
     "en-US": enUS,
@@ -75,36 +76,38 @@ const Scheduler = ({ tutor }: CardProps) => {
     return formattedDate.replace("T", " ").slice(0, 19);
   };
 
+  const handleClick = (event: Slot) => {
+    setSelectedEvent(event);
+    setOpen(true);
+  };
+
   const handleBooking = async (event: Slot) => {
-    setOpen(true); // Open the modal when an event is clicked
-    if (wantsToBook) {
-      const formattedStart = formatDateToLocal(event.start);
-      const formattedEnd = formatDateToLocal(event.end);
+    const formattedStart = formatDateToLocal(event.start);
+    const formattedEnd = formatDateToLocal(event.end);
 
-      const bookingData = {
-        start: formattedStart,
-        end: formattedEnd,
-        tutorID: id,
-      };
+    const bookingData = {
+      start: formattedStart,
+      end: formattedEnd,
+      tutorID: id,
+    };
 
-      try {
-        const response = await fetch(`api/booking/session`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(bookingData),
-        });
+    try {
+      const response = await fetch(`api/booking/session`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookingData),
+      });
 
-        if (response.ok) {
-          const result = await response.json();
-          console.log("Booking successful:", result);
-        } else {
-          console.error("Booking failed:", response.statusText);
-        }
-      } catch (error) {
-        console.error("Error during booking:", error);
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Booking successful:", result);
+      } else {
+        console.error("Booking failed:", response.statusText);
       }
+    } catch (error) {
+      console.error("Error during booking:", error);
     }
   };
 
@@ -135,7 +138,7 @@ const Scheduler = ({ tutor }: CardProps) => {
             week: true,
           }}
           step={30}
-          onSelectEvent={handleBooking}
+          onSelectEvent={handleClick}
           eventPropGetter={eventPropGetter}
         />
       </div>
@@ -143,7 +146,8 @@ const Scheduler = ({ tutor }: CardProps) => {
         open={open}
         setOpen={setOpen}
         tutorName={tutor.full_name}
-        setWantsToBook={setWantsToBook}
+        selectedEvent={selectedEvent}
+        handleBooking={handleBooking}
       />
     </>
   );

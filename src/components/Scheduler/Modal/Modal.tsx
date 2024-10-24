@@ -13,16 +13,20 @@ interface ModalProps {
   setOpen: (open: boolean) => void;
   tutorName: string;
   setWantsToBook: (wantsToBook: boolean) => void;
+  selectedEvent: Slot | undefined; // Allow undefined
+  hanldeFunction: (event) => void;
 }
 
 export default function Modal({
   open,
   setOpen,
   tutorName,
-  setWantsToBook,
+  selectedEvent,
+  handleBooking,
 }: ModalProps) {
   const bookHandler = () => {
-    setWantsToBook(true);
+    console.log(selectedEvent);
+    handleBooking(selectedEvent);
     setOpen(false);
   };
   return (
