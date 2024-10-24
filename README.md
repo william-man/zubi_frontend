@@ -177,3 +177,8 @@ All of our components are inside `src/components` folder.
 6. **Tutors**:
 - This page uses the CardContainer component, ddisplaying all of our available tutors
 
+8. **ContactUs**: 
+- Our address and contacts
+
+
+
