@@ -5,7 +5,7 @@ const UsefulInformation = () => {
     { name: 'Contact Us', url: '#' },
     { name: 'Careers', url: '#' },
     { name: 'Donate', url: '#' },
-    { name: 'FAQ', url: '#' },
+    { name: 'FAQ', url: '/faq' },
     { name: 'Partners', url: '#' },
   ];
 
