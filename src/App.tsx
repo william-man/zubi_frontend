@@ -7,7 +7,11 @@ import Authentication from "./pages/Authentication";
 import { UserProvider } from "./context/UserContext";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Tutors from "./pages/Tutors";
+
+import TermsConditions from "./pages/TermsConditions";
+
 import ContactUs from "./pages/ContactUs";
+
 
 
 function App() {
@@ -22,9 +26,13 @@ function App() {
           <Route path="/subjects" element={<Subjects />} />
           <Route path="/auth" element={<Authentication />} />
 
+          <Route path="/termsconditions" element={<TermsConditions />} />
+
+
           <Route path="/contactus" element={<ContactUs />} />
 
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+
 
         </Routes>
       </BrowserRouter>
