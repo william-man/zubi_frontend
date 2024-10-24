@@ -5,8 +5,8 @@ const Home = () => {
   return (
     <>
       <Layout>
-        <div className="pt-16 p-4 md:p-8 lg:p-12">
-          <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-zubiLogo">
+        <div className="mt-16 p-4 md:p-8 lg:p-12">
+          <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-zubiText">
             Tutors
           </h1>
           <CardsContainer />
