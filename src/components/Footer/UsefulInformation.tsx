@@ -6,7 +6,7 @@ const UsefulInformation = () => {
     { name: 'Careers', url: '#' },
     { name: 'Donate', url: '#' },
     { name: 'FAQ', url: '/faq' },
-    { name: 'Partners', url: '#' },
+    { name: 'Partners', url: '/partners' },
   ];
 
   return <FooterSection title="Useful Information" links={usefulInfoLinks} />;
