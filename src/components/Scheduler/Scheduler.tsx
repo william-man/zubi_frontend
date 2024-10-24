@@ -29,7 +29,7 @@ const Scheduler = ({ tutor }: CardProps) => {
   const [open, setOpen] = useState(false);
 
   const [tutorSlots, setTutorSlots] = useState();
-  const [selectedEvent, setSelectedEvent] = useState<Event | null>();
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
   const locales = {
     "en-US": enUS,
@@ -88,7 +88,7 @@ const Scheduler = ({ tutor }: CardProps) => {
     setOpen(true);
   };
 
-  const handleBooking = async (event: Slot) => {
+  const handleBooking = async (event: Event) => {
     const formattedStart = formatDateToLocal(event.start);
     const formattedEnd = formatDateToLocal(event.end);
 

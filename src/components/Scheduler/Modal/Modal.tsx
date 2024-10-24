@@ -16,6 +16,12 @@ interface ModalProps {
   handleBooking: (event: Event) => Promise<void>;
 }
 
+interface Event {
+  booking_status: string;
+  end: string;
+  start: string;
+}
+
 export default function Modal({
   open,
   setOpen,
