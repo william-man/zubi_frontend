@@ -7,11 +7,15 @@ import Authentication from "./pages/Authentication";
 import { UserProvider } from "./context/UserContext";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Tutors from "./pages/Tutors";
+
+import FAQ from "./pages/FAQ";
+
 import Careers from "./pages/Careers";
 
 import TermsConditions from "./pages/TermsConditions";
 
 import ContactUs from "./pages/ContactUs";
+
 
 
 
@@ -27,6 +31,9 @@ function App() {
           <Route path="/subjects" element={<Subjects />} />
           <Route path="/auth" element={<Authentication />} />
 
+          <Route path="/faq" element={<FAQ />} />
+
+
           <Route path="/careers" element={<Careers />} />
 
 
@@ -36,6 +43,7 @@ function App() {
           <Route path="/contactus" element={<ContactUs />} />
 
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+
 
 
 
