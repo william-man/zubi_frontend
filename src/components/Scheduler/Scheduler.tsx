@@ -18,12 +18,18 @@ interface Slot {
   fk_tutor_id: number;
 }
 
+interface Event {
+  booking_status: string;
+  end: string;
+  start: string;
+}
+
 const Scheduler = ({ tutor }: CardProps) => {
   const id = tutor.id;
   const [open, setOpen] = useState(false);
 
   const [tutorSlots, setTutorSlots] = useState();
-  const [selectedEvent, setSelectedEvent] = useState();
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>();
 
   const locales = {
     "en-US": enUS,
@@ -76,8 +82,9 @@ const Scheduler = ({ tutor }: CardProps) => {
     return formattedDate.replace("T", " ").slice(0, 19);
   };
 
-  const handleClick = (event: Slot) => {
+  const handleClick = (event: Event) => {
     setSelectedEvent(event);
+    console.log(event);
     setOpen(true);
   };
 

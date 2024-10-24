@@ -12,9 +12,8 @@ interface ModalProps {
   open: boolean;
   setOpen: (open: boolean) => void;
   tutorName: string;
-  setWantsToBook: (wantsToBook: boolean) => void;
-  selectedEvent: Slot | undefined; // Allow undefined
-  hanldeFunction: (event) => void;
+  selectedEvent: Event | null;
+  handleBooking: (event: Event) => Promise<void>;
 }
 
 export default function Modal({
