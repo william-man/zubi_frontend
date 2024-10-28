@@ -9,7 +9,7 @@ const Subjects: React.FC = () => {
 
   const fetchSubjects = async () => {
     try {
-      const response = await fetch("/api/subjects");
+      const response = await fetch(`${import.meta.env.VITE_ORIGIN}/subjects`);
       if (!response.ok) {
         throw new Error("Failed to fetch subjects");
       }
@@ -30,7 +30,9 @@ const Subjects: React.FC = () => {
   return (
     <Layout>
       <div className="mt-16 p-4 md:p-8 lg:p-12">
-        <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-zubiText">Subjects</h1>
+        <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-zubiText">
+          Subjects
+        </h1>
 
         {/* Handle loading and error states */}
         {loading ? (
@@ -40,8 +42,13 @@ const Subjects: React.FC = () => {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {subjects.map((subject) => (
-              <div key={subject.id} className="p-4 border rounded-md shadow-lg bg-zubiGreen text-white">
-                <h2 className="text-xl font-bold mb-2">{subject.subject_name}</h2>
+              <div
+                key={subject.id}
+                className="p-4 border rounded-md shadow-lg bg-zubiGreen text-white"
+              >
+                <h2 className="text-xl font-bold mb-2">
+                  {subject.subject_name}
+                </h2>
                 <p className="text-base">{subject.description}</p>
               </div>
             ))}

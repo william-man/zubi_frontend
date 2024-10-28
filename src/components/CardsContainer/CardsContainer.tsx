@@ -6,7 +6,7 @@ const CardsContainer: React.FC = () => {
 
   const getTutors = async () => {
     try {
-      const response = await fetch("/api/tutors");
+      const response = await fetch(`${import.meta.env.VITE_ORIGIN}/tutors`);
       if (!response.ok) {
         throw new Error(
           `Error is being made~!!!!: ${response.status} ${response.statusText}`

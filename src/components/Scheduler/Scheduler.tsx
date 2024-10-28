@@ -36,7 +36,9 @@ const Scheduler = ({ tutor }: CardProps) => {
   };
 
   const getTutorSlots = async () => {
-    const slotsJson = await fetch(`api/booking/tutorslots?id=${id}`);
+    const slotsJson = await fetch(
+      `${import.meta.env.VITE_ORIGIN}/booking/tutorslots?id=${id}`
+    );
     const slots = await slotsJson.json();
 
     const slotsArrays = slots.map((slot: Slot) => {
@@ -105,13 +107,16 @@ const Scheduler = ({ tutor }: CardProps) => {
     };
 
     try {
-      const response = await fetch(`api/booking/session`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(bookingData),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_ORIGIN}/booking/session`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(bookingData),
+        }
+      );
 
       if (response.ok) {
         const result = await response.json();
