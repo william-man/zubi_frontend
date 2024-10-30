@@ -1,4 +1,4 @@
-ame: Deploy to S3
+Name: Deploy to S3
 
 on:
   push:
