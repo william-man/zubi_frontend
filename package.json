@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "VITE_ORIGIN=http://localhost:3000 vite",
-    "build": "VITE_ORIGIN=https://pro04-backend-jack-khalos-william.onrender.com/ tsc -b && vite build",
+    "build": "VITE_ORIGIN=https://pro04-backend-jack-khalos-william.onrender.com tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky"
